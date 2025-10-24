@@ -1,0 +1,113 @@
+/* AI Chat Styles */
+
+.ai-chat-container {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+.ai-chat-messages {
+  background: #f5f7fa;
+  border-radius: 8px;
+}
+
+.message-wrapper {
+  animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.message-bubble {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
+}
+
+.message-bubble:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.ai-chat-input input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.ai-chat-toolbar-btn {
+  display: inline-block;
+}
+
+/* Loading animation */
+.ai-chat-loading {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  border-top-color: #007bff;
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Code highlighting */
+.ai-chat-container pre {
+  background: #2d2d2d;
+  color: #f8f8f2;
+  padding: 15px;
+  border-radius: 5px;
+  overflow-x: auto;
+  margin: 10px 0;
+}
+
+.ai-chat-container code {
+  background: #f4f4f4;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-family: "Courier New", monospace;
+}
+
+.ai-chat-container pre code {
+  background: transparent;
+  padding: 0;
+}
+
+/* Markdown styles */
+.ai-chat-container .markdown-content h1,
+.ai-chat-container .markdown-content h2,
+.ai-chat-container .markdown-content h3 {
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+.ai-chat-container .markdown-content ul,
+.ai-chat-container .markdown-content ol {
+  margin-left: 20px;
+}
+
+.ai-chat-container .markdown-content blockquote {
+  border-left: 4px solid #007bff;
+  padding-left: 15px;
+  margin: 10px 0;
+  color: #666;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .ai-chat-toolbar-btn span {
+    display: none;
+  }
+
+  .message-bubble {
+    max-width: 85% !important;
+  }
+}

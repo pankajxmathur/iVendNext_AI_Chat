@@ -1,0 +1,209 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-01-24 14:52:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "enabled",
+  "column_break_2",
+  "default_provider",
+  "section_break_3",
+  "providers",
+  "section_break_5",
+  "temperature",
+  "max_tokens",
+  "column_break_8",
+  "max_conversation_length",
+  "rate_limit_per_user",
+  "section_break_11",
+  "enable_streaming",
+  "enable_markdown",
+  "column_break_14",
+  "enable_code_highlighting",
+  "enable_conversation_history",
+  "section_break_17",
+  "enable_mcp",
+  "mcp_server_url",
+  "column_break_20",
+  "mcp_timeout",
+  "section_break_22",
+  "system_prompt",
+  "section_break_24",
+  "enable_logging",
+  "log_level"
+ ],
+ "fields": [
+  {
+   "default": "0",
+   "fieldname": "enabled",
+   "fieldtype": "Check",
+   "label": "Enabled"
+  },
+  {
+   "fieldname": "column_break_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "default_provider",
+   "fieldtype": "Select",
+   "label": "Default Provider",
+   "options": "OpenAI\nAnthropic\nGoogle\nAzure OpenAI\nOllama\nCustom"
+  },
+  {
+   "fieldname": "section_break_3",
+   "fieldtype": "Section Break",
+   "label": "Provider Configuration"
+  },
+  {
+   "fieldname": "providers",
+   "fieldtype": "Table",
+   "label": "Providers",
+   "options": "AI Chat Provider"
+  },
+  {
+   "fieldname": "section_break_5",
+   "fieldtype": "Section Break",
+   "label": "Model Parameters"
+  },
+  {
+   "default": "0.7",
+   "fieldname": "temperature",
+   "fieldtype": "Float",
+   "label": "Temperature"
+  },
+  {
+   "default": "2000",
+   "fieldname": "max_tokens",
+   "fieldtype": "Int",
+   "label": "Max Tokens"
+  },
+  {
+   "fieldname": "column_break_8",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "50",
+   "fieldname": "max_conversation_length",
+   "fieldtype": "Int",
+   "label": "Max Conversation Length"
+  },
+  {
+   "default": "100",
+   "description": "Maximum messages per hour per user",
+   "fieldname": "rate_limit_per_user",
+   "fieldtype": "Int",
+   "label": "Rate Limit Per User"
+  },
+  {
+   "fieldname": "section_break_11",
+   "fieldtype": "Section Break",
+   "label": "Features"
+  },
+  {
+   "default": "1",
+   "fieldname": "enable_streaming",
+   "fieldtype": "Check",
+   "label": "Enable Streaming"
+  },
+  {
+   "default": "1",
+   "fieldname": "enable_markdown",
+   "fieldtype": "Check",
+   "label": "Enable Markdown"
+  },
+  {
+   "fieldname": "column_break_14",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "1",
+   "fieldname": "enable_code_highlighting",
+   "fieldtype": "Check",
+   "label": "Enable Code Highlighting"
+  },
+  {
+   "default": "1",
+   "fieldname": "enable_conversation_history",
+   "fieldtype": "Check",
+   "label": "Enable Conversation History"
+  },
+  {
+   "fieldname": "section_break_17",
+   "fieldtype": "Section Break",
+   "label": "MCP Integration"
+  },
+  {
+   "default": "0",
+   "fieldname": "enable_mcp",
+   "fieldtype": "Check",
+   "label": "Enable MCP"
+  },
+  {
+   "depends_on": "enable_mcp",
+   "fieldname": "mcp_server_url",
+   "fieldtype": "Data",
+   "label": "MCP Server URL"
+  },
+  {
+   "fieldname": "column_break_20",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "30",
+   "depends_on": "enable_mcp",
+   "fieldname": "mcp_timeout",
+   "fieldtype": "Int",
+   "label": "MCP Timeout (seconds)"
+  },
+  {
+   "fieldname": "section_break_22",
+   "fieldtype": "Section Break",
+   "label": "System Configuration"
+  },
+  {
+   "default": "You are a helpful AI assistant integrated with Frappe Framework. You help users with their questions and tasks.",
+   "fieldname": "system_prompt",
+   "fieldtype": "Text",
+   "label": "System Prompt"
+  },
+  {
+   "fieldname": "section_break_24",
+   "fieldtype": "Section Break",
+   "label": "Logging"
+  },
+  {
+   "default": "1",
+   "fieldname": "enable_logging",
+   "fieldtype": "Check",
+   "label": "Enable Logging"
+  },
+  {
+   "default": "INFO",
+   "fieldname": "log_level",
+   "fieldtype": "Select",
+   "label": "Log Level",
+   "options": "DEBUG\nINFO\nWARNING\nERROR"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2025-01-24 14:52:00.000000",
+ "modified_by": "Administrator",
+ "module": "AI Chat",
+ "name": "AI Chat Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "read": 1,
+   "role": "System Manager",
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
