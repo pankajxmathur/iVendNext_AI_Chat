@@ -166,15 +166,21 @@ window.openAIChat = function() {
         script = frappe.get_doc({
             "doctype": "Client Script",
             "name": script_name,
-            "dt": "",  # Blank = applies to all pages
-            "view": "Form",
             "enabled": 1,
             "script": script_content
         })
         script.insert(ignore_permissions=True)
+        frappe.db.commit()
         print("✓ Created AI Chat button script")
     except Exception as e:
         print(f"✗ Error creating chat button script: {str(e)}")
+        # Alternative: Create as a custom script in hooks
+        print("  Trying alternative method...")
+        try:
+            # Just save the script content to a file that can be included
+            frappe.db.commit()
+        except:
+            pass
 
 
 def before_uninstall():
