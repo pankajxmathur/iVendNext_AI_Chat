@@ -5,16 +5,21 @@ import path from 'path';
 export default defineConfig({
   plugins: [react()],
   build: {
+    lib: {
+      entry: path.resolve(__dirname, 'src/main.tsx'),
+      name: 'AIChatApp',
+      formats: ['umd'],
+      fileName: () => 'ai-chat.js',
+    },
     outDir: '../ivendnext_ai_chat/public/dist',
     emptyOutDir: true,
     rollupOptions: {
-      input: {
-        main: path.resolve(__dirname, 'src/main.tsx'),
-      },
+      external: ['react', 'react-dom'],
       output: {
-        entryFileNames: 'ai-chat.js',
-        chunkFileNames: 'chunks/[name]-[hash].js',
-        assetFileNames: 'assets/[name]-[hash][extname]',
+        globals: {
+          react: 'React',
+          'react-dom': 'ReactDOM',
+        },
       },
     },
   },

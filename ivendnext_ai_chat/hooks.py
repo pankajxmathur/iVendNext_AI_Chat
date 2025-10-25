@@ -11,7 +11,9 @@ app_license = "MIT"
 # ------------------
 
 app_include_css = "/assets/ivendnext_ai_chat/css/ivendnext_ai_chat.css"
-app_include_js = "/assets/ivendnext_ai_chat/js/ivendnext_ai_chat.min.js"
+app_include_js = [
+    "/assets/ivendnext_ai_chat/js/ai_chat.bundle.js"
+]
 
 # include js, css files in header of desk.html
 # app_include_css = "/assets/ivendnext_ai_chat/css/ivendnext_ai_chat.css"

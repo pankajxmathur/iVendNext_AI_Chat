@@ -1,0 +1,9 @@
+{
+  "name": "ivendnext_ai_chat",
+  "version": "0.0.1",
+  "build": {
+    "ivendnext_ai_chat/public/js/ai_chat.bundle.js": [
+      "public/js/ai_chat.bundle.js"
+    ]
+  }
+}
