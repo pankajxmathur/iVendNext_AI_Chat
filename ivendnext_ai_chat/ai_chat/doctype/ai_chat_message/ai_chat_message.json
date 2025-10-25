@@ -66,6 +66,7 @@
  "modified": "2025-01-24 14:52:00.000000",
  "modified_by": "Administrator",
  "module": "AI Chat",
+ "name": "AI Chat Message",
  "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
