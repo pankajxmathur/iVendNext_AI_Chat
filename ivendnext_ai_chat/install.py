@@ -13,8 +13,9 @@ def after_install():
     # Create default settings
     create_default_settings()
 
-    # Add custom script for chat button
-    add_chat_button_script()
+    # Chat button is now loaded via hooks.py (app_include_js)
+    # No need for Client Script anymore
+    print("✓ AI Chat button will load automatically from JS bundle")
 
     # Create sample data (optional)
     # create_sample_data()
