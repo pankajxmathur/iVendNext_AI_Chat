@@ -60,10 +60,22 @@ frappe.ai_chat.open_dialog = function() {
 
     let conversationId = null;
 
-    $('#ai-send-btn').on('click', sendMessage);
-    $('#ai-chat-input').on('keypress', function(e) {
-        if (e.which === 13) sendMessage();
-    });
+    // Wait for DOM to be ready before attaching handlers
+    setTimeout(function() {
+        $('#ai-send-btn').off('click').on('click', function() {
+            sendMessage();
+        });
+
+        $('#ai-chat-input').off('keypress').on('keypress', function(e) {
+            if (e.which === 13 || e.keyCode === 13) {
+                e.preventDefault();
+                sendMessage();
+            }
+        });
+
+        // Focus the input
+        $('#ai-chat-input').focus();
+    }, 100);
 
     function sendMessage() {
         const message = $('#ai-chat-input').val().trim();
