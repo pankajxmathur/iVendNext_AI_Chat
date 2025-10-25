@@ -30,9 +30,19 @@ class AIChatConversation(Document):
         )
         message.insert(ignore_permissions=True)
 
-        # Update conversation stats
-        self.message_count = (self.message_count or 0) + 1
-        self.total_tokens = (self.total_tokens or 0) + tokens_used
-        self.save(ignore_permissions=True)
+        # Update conversation stats using database update to avoid version conflicts
+        frappe.db.set_value(
+            "AI Chat Conversation",
+            self.name,
+            {
+                "message_count": (self.message_count or 0) + 1,
+                "total_tokens": (self.total_tokens or 0) + tokens_used,
+                "last_message_at": frappe.utils.now(),
+            },
+            update_modified=True,
+        )
+
+        # Reload to get updated values
+        self.reload()
 
         return message
