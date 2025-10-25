@@ -68,14 +68,12 @@ app_include_js = [
 # Installation
 # ------------
 
-# before_install = "ivendnext_ai_chat.install.before_install"
-# after_install = "ivendnext_ai_chat.install.after_install"
+after_install = "ivendnext_ai_chat.install.after_install"
 
 # Uninstallation
 # ------------
 
-# before_uninstall = "ivendnext_ai_chat.uninstall.before_uninstall"
-# after_uninstall = "ivendnext_ai_chat.uninstall.after_uninstall"
+before_uninstall = "ivendnext_ai_chat.install.before_uninstall"
 
 # Desk Notifications
 # ------------------

@@ -13,21 +13,32 @@ A production-ready AI Chatbot application for Frappe Framework with multi-provid
 - **Configurable**: Easy configuration through Frappe UI
 - **Production Ready**: Error handling, logging, and monitoring
 
-## Installation
+## Quick Installation
 
-1. Get the app:
 ```bash
-bench get-app https://github.com/yourusername/iVendNext_AI_Chat
+# 1. Get the app
+bench get-app https://github.com/pankajxmathur/iVendNext_AI_Chat
+
+# 2. Install on your site
+bench --site your-site.local install-app ivendnext_ai_chat --force
+
+# 3. Restart
+bench restart
+
+# 4. Configure in UI (see below)
 ```
 
-2. Install the app on your site:
-```bash
-bench --site your-site.local install-app ivendnext_ai_chat
-```
+**For complete installation instructions, see [FRESH_INSTALL.md](FRESH_INSTALL.md)**
 
-3. Configure your LLM provider:
-   - Go to AI Chat Settings
-   - Add your API keys and configure providers
+## Configuration
+
+After installation, configure your LLM provider:
+
+1. Login to your Frappe site
+2. Search for **"AI Chat Settings"**
+3. Check **Enabled**
+4. Add a provider (OpenAI, Anthropic, or Ollama)
+5. Save and start chatting!
 
 ## Configuration
 
