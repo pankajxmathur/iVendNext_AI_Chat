@@ -62,12 +62,20 @@ frappe.ai_chat.open_dialog = function() {
 
     // Wait for DOM to be ready before attaching handlers
     setTimeout(function() {
-        $('#ai-send-btn').off('click').on('click', function() {
+        console.log('AI Chat: Attaching event handlers');
+        console.log('Send button found:', $('#ai-send-btn').length);
+        console.log('Input found:', $('#ai-chat-input').length);
+
+        // Use delegation for better reliability
+        dialog.fields_dict.chat_container.$wrapper.on('click', '#ai-send-btn', function(e) {
+            console.log('Send button clicked');
+            e.preventDefault();
             sendMessage();
         });
 
-        $('#ai-chat-input').off('keypress').on('keypress', function(e) {
+        dialog.fields_dict.chat_container.$wrapper.on('keypress', '#ai-chat-input', function(e) {
             if (e.which === 13 || e.keyCode === 13) {
+                console.log('Enter key pressed');
                 e.preventDefault();
                 sendMessage();
             }
@@ -78,8 +86,13 @@ frappe.ai_chat.open_dialog = function() {
     }, 100);
 
     function sendMessage() {
+        console.log('sendMessage called');
         const message = $('#ai-chat-input').val().trim();
-        if (!message) return;
+        console.log('Message:', message);
+        if (!message) {
+            console.log('Empty message, returning');
+            return;
+        }
 
         addMessage('user', message);
         $('#ai-chat-input').val('');
